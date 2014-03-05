@@ -5,18 +5,12 @@
    "author": {
       "name": "ng.seed"
    },
-	"dependencies":{"ng.seed":"*"},
-   "modules": {
+	"dependencies": {
+		"ng.seed":"git://github.com/ng-/ng.seed.git"
+	},
+   "requires": {
       "ng": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js",
       "ngRoute": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.min.js"
-   },
-	"alt_modules": {
-      "ng": "ng.cdn/1.2.6.js",
-      "ngRoute": "ng.cdn/1.2.0-route.js"
-   },
-   "alt_alt_modules": {
-      "ng": "http://code.angularjs.org/snapshot/angular.js",
-      "ngRoute": "http://code.angularjs.org/snapshot/angular-route.js"
    },
    "ports": {
       "1337": "http"
