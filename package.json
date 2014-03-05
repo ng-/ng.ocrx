@@ -1,6 +1,7 @@
 {
    "name": "ng.ocrx",
    "description": "a modular ng application",
+	"version": "0.0.0-alpha0",
    "author": {
       "name": "ng.seed"
    },
