@@ -5,7 +5,7 @@
    "author": {
       "name": "ng.seed"
    },
-	"dependencies":{"ng.seed":"true"},
+	"dependencies":{"ng.seed":"*"},
    "modules": {
       "ng": "ng.cdn/1.2.6.js",
       "ngRoute": "ng.cdn/1.2.0-route.js"
