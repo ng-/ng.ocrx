@@ -6,14 +6,16 @@
       "name": "ng.seed"
    },
 	"dependencies": {
-		"ng.seed":"git://github.com/ng-/ng.seed.git"
+		"ng.seed":"git://github.com/ng-/ng.seed.git",
+		"ng.style":"git://github.com/ng-/ng.style.git",
+		"ng.data":"git://github.com/ng-/ng.data.git"
 	},
    "requires": {
       "ng": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js",
       "ngRoute": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.min.js"
    },
    "ports": {
-      "1337": "http"
+      "80": "http"
    },
    "main": "node_modules/ng.seed"
 }
