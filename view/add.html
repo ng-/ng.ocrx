@@ -1,0 +1,29 @@
+<div controller="add">
+	<input
+		type="button"
+		value="Finished"
+		click="done()"
+		disabled=" ! count"
+		.btn-danger .btn-lg .col-xs-5
+		position:fixed
+		left:10 top:10
+	>
+	<div position:fixed right:50% top:50%>
+		<div
+			margin-top:-220px
+			margin-right:-100px
+			font-size:300px
+			font-weight:100
+		>
+			{{count}}
+		</div>
+	</div>
+	<input
+		type="camera"
+		value="Next Item"
+		onchange="nextItem(this.files)"
+		.btn-danger .btn-lg .col-xs-5
+		position:fixed
+		left:10 bottom:10
+	>
+</div>

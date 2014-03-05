@@ -1,0 +1,27 @@
+<div .text-danger .text-title .col-xs-8>New Account</div>
+<div controller="join" .col-xs-12>
+	<form name="form" role="form" .form-horizontal>
+		<div label="Name" .form-group .col-xs-12>
+			<input name="name" type="text" model="user.name" required>
+		</div>
+		<div label="Email" error="Must be a valid email" .form-group .col-xs-12>
+			<input name="email" type="email" model="user.email" required>
+		</div>
+		<div label="Facility" error="Must be at least 6 characters" .form-group .col-xs-12>
+			<select model="user.group" options="group for group in groups" required>
+				<option value="">-- choose facility --</option>
+			</select>
+		</div>
+		<div label="Password" error="Must be at least 6 characters" .form-group .col-xs-12>
+			<input name="password" type="password" model="user.password" minlength="6" required>
+			<label .col-xs-3></label>
+			<input name="confirm" type="password" model="user.confirm" minlength="6" required>
+		</div>
+		<div .form-group>
+			<div .col-xs-offset-3 .col-xs-9>
+				<button click="signUp(user)" disabled="form.$invalid" .btn .btn-danger .btn-lg .btn-block>Create My Account</button>
+				<a href="/" if="! user.name" .btn .btn-default .btn-lg .btn-block>I Have An Account</a>
+			</div>
+		</div>
+	</form>
+</div>

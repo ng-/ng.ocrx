@@ -1,0 +1,49 @@
+<div .text-danger .text-title .col-xs-8>Sign In</div>
+<div controller="login" .col-xs-12>
+	<form
+		name="form"
+		role="form"
+		.col-xs-12
+		.form-horizontal
+	>
+		<div error="Must be a valid email" .form-group>
+			<input
+				name="email"
+				type="email"
+				placeholder="Email"
+				model="user.email"
+				required
+				.input-lg
+			>
+		</div>
+		<div error="Must be at least 6 characters" .form-group>
+			<input
+				name="password"
+				type="password"
+				placeholder="Password"
+				model="user.password"
+				minlength="6"
+				required
+				.input-lg
+			>
+		</div>
+		<div .form-group>
+			<button
+				type="submit"
+				click="login(user)"
+				disabled="form.$invalid"
+				.btn-danger .btn-lg .btn-block
+			>
+				Sign In
+			</button>
+			<a
+				if="! user.email"
+				href="/join"
+				.btn-default .btn-lg .btn-block
+			>
+				Sign Up
+			</a>
+		</div>
+	</form>
+</div>
+<alerts .col-xs-12></alerts>

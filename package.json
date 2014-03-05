@@ -1,0 +1,20 @@
+{
+   "name": "ng.ocrx",
+   "description": "a modular ng application",
+   "author": {
+      "name": "ng.seed"
+   },
+	"dependencies":{"ng.seed":"true"},
+   "modules": {
+      "ng": "ng.cdn/1.2.6.js",
+      "ngRoute": "ng.cdn/1.2.0-route.js"
+   },
+   "alt_modules": {
+      "ng": "http://code.angularjs.org/snapshot/angular.js",
+      "ngRoute": "http://code.angularjs.org/snapshot/angular-route.js"
+   },
+   "ports": {
+      "1337": "http"
+   },
+   "main": "node_modules/ng.seed"
+}
