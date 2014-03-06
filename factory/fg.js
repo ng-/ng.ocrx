@@ -29,11 +29,16 @@ module.exports = function($q, $http)
 
 		saveFile: function(folder, name, data)
 		{
-			var dataURL = '^data:.+\/(.+?);(.+?),(.+)$'
+			var dataURL = '^data:.+\/(.+?);(.+?)$'
 
-			data = data.match(RegExp(dataURL))
+			//RexEx and split have trouble on large files, so split apart manually
+			var index = data.indexOf(',')
 
-			if ( ! data)
+			data = [data.slice(0, index), data.slice(index)]
+
+			data[0] = data[0].match(RegExp(dataURL))
+
+			if ( ! data[0])
 			{
 				return $q.reject
 				({
@@ -42,7 +47,7 @@ module.exports = function($q, $http)
 				})
 			}
 
-			data = new Buffer(data[3], data[2])
+			data = new Buffer(data[1], data[0][2])
 
 			var md5 = require('crypto').createHash('md5').update(data).digest('hex')
 
@@ -61,6 +66,7 @@ module.exports = function($q, $http)
 
 			.catch(function(res)
 			{
+				console.log('status', res.status)
 				if (302 != res.status)
 				{
 					return $q.reject(res)
