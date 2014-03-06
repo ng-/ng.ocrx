@@ -66,7 +66,6 @@ module.exports = function($q, $http)
 
 			.catch(function(res)
 			{
-				console.log('status', res.status)
 				if (302 != res.status)
 				{
 					return $q.reject(res)
