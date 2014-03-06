@@ -28,13 +28,13 @@ module.exports = function($scope, $window, $location, fg, data)
 	{
 		var reader = new $window.FileReader
 
+		$scope.count = data('count+', 1)
+
 		reader.onload = function()
 		{
 			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', this.result)
 		}
 
 		reader.readAsDataURL(files[0]);
-
-		$scope.count = data('count+', 1)
 	}
 }
