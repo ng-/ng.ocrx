@@ -10,6 +10,7 @@ exports.server = function()
 			[
 				"<html ng-app='ng.ocrx'>",
 					'<head>',
+						'<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">',
 						"<link href='//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css' rel='stylesheet'>",
 						"<style>",
 							".text-title { font-size:30px; font-weight:100; }",
