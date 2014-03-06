@@ -30,7 +30,7 @@ module.exports = function($scope, $window, $location, fg, data)
 
 		reader.onload = function()
 		{
-			fg.saveFile(folder.uuid, item+$scope.count+'.jpg', this.result)
+			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', this.result)
 		}
 
 		reader.readAsDataURL(files[0]);
