@@ -15,7 +15,7 @@
       "ngRoute": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.min.js"
    },
    "ports": {
-      "1337": "http"
+      "80": "http"
    },
    "main": "node_modules/ng.seed"
 }
