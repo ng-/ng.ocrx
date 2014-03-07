@@ -46,7 +46,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 
 			context.rotate(Math.PI / 2)
 
-			context.drawImage(img, 0, 0, 3264, 2448, 0, 0, 800, 1200)
+			context.drawImage(img, 0, 0, 3264, 2448, 0, 0, 1600, 1200)
 
 			//drawImageIOSFix(context, img, 0, 0, 3264, 2448, 0, 0, 800, 600)
 
