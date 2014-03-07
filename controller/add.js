@@ -35,8 +35,9 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 			URL.revokeObjectURL(img.src)
 
 			var canvas = document.createElement('canvas')
-			  , width  = canvas.width  = img.width  * .25 //Default iPhone: 3264px
-			  , height = canvas.height = img.height * .25 //Default iPhone: 2448px
+
+			canvas.width  = 800 //Default iPhone: 3264px
+			canvas.height = 600 //Default iPhone: 2448px
 
 			canvas.getContext('2d').drawImage(img, 0, 0, width, height)
 
