@@ -46,7 +46,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 
 			context.rotate(Math.PI / 2)
 
-			drawImageIOSFix(context, img, 0, 0, 2448, 3264, 0, 0, 600, 800)
+			drawImageIOSFix(context, img, 0, 0, 3264, 2448, 0, 0, 600, 800)
 
 			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', canvas.toDataURL('image/jpeg'))
 		}
@@ -89,7 +89,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 		function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
 			 var vertSquashRatio = detectVerticalSquash(img);
 
-			 $scope.vertical = vertSquashRatio
+			 $scope.vertical = '    '+vertSquashRatio+'   '+img.width+'  '+img.height
 		 // Works only if whole image is displayed:
 		 // ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
 		 // The following works correct also when only a part of the image is displayed:
