@@ -89,7 +89,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 		function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
 			 var vertSquashRatio = detectVerticalSquash(img);
 
-			 console.log('vertical ratio', vertSquashRatio)
+			 $scope.vertical = vertSquashRatio
 		 // Works only if whole image is displayed:
 		 // ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
 		 // The following works correct also when only a part of the image is displayed:
