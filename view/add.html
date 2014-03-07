@@ -5,10 +5,10 @@
 		click="done()"
 		disabled=" ! count"
 		.btn-danger .btn-lg .col-xs-5
-		position:fixed
+		position:absolute
 		left:10 top:10
 	>
-	<div position:fixed right:50% top:50%>
+	<div position:absolute right:50% top:50% z-index:-1>
 		<div
 			ng-style="{'margin-right':right}"
 			margin-top:-220px
@@ -23,7 +23,7 @@
 		value="Next Item"
 		onchange="nextItem(this.files)"
 		.btn-danger .btn-lg .col-xs-5
-		position:fixed
+		position:absolute
 		left:10 bottom:10
 	>
 </div>
