@@ -1,13 +1,16 @@
-<div controller="done" .col-sm-10>
-	<div .text-title><span .text-danger>Thank You </span>{{name}}</div>
-	<h2 margin-top:5px>Record Complete!</h2>
-	<ul>
-		<li>Item count of {{count}}</li>
-		<li>Tracking #{{folder.track}}</li>
-		<li>{{ folder.send || 'No label need' }}
-		<li>Pickup in {{folder.room}}<br>tomorrow between 9am-4pm</li>
-	</ul>
-	<strong>We will fax {{user.group}} the completed medication record shortly!</strong>
-	<a href="/start" .btn-default .btn-lg .btn-block>Start New</a>
-	<button click="signOut()" .btn-danger .btn-lg .btn-block>Sign Out</button>
+<div controller="done" height:100%>
+	<div .text-title .col-xs-8><span .text-danger>Thank You </span>{{name}}</div>
+	<div .col-xs-12>
+		<strong>We will fax {{user.group}} the completed medication record shortly!</strong>
+		<ul>
+			<li>Item count of {{count}}</li>
+			<li>Tracking #{{folder.track}}</li>
+			<li>{{ folder.send || 'No label need' }}
+			<li>Pickup in {{folder.room}}<br>tomorrow between 9am-4pm</li>
+		</ul>
+	</div>
+	<div .col-xs-12 position:absolute bottom:10>
+		<a href="/start" .btn-default .btn-lg .btn-block>Start New</a>
+		<button click="signOut()" .btn-danger .btn-lg .btn-block>Sign Out</button>
+	</div>
 </div>

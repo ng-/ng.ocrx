@@ -19,7 +19,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 
 	$scope.count = data('count')
 
-	$scope.right = $scope.count < 10 ? '-100px' : '-150px'
+	$scope.right = $scope.count < 10 ? '-80px' : '-150px'
 
 	$scope.done = function()
 	{
