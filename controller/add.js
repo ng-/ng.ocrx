@@ -46,7 +46,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 
 			context.rotate(Math.PI / 2)
 
-			drawImageIOSFix(context, img, 0, 0, 600, 800)
+			drawImageIOSFix(context, img, 0, 0, 2448, 3264, 0, 0, 600, 800)
 
 			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', canvas.toDataURL('image/jpeg'))
 		}
