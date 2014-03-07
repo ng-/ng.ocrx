@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = function($scope, $window, $location, fg, data)
+module.exports = function($scope, $window, $document, $location, fg, data)
 {
 	'use strict'
 
@@ -26,15 +26,24 @@ module.exports = function($scope, $window, $location, fg, data)
 
 	$scope.nextItem = function(files)
 	{
-		var reader = new $window.FileReader
-
 		$scope.count = data('count+', 1)
 
-		reader.onload = function()
+		var img = new Image
+
+		img.onload = function()
 		{
-			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', this.result)
+			URL.revokeObjectURL(img.src)
+
+			var canvas = document.createElement('canvas')
+
+			canvas.width  = img.width  * .25 //Default iPhone: 3264px
+			canvas.height = img.height * .25 //Default iPhone: 2448px
+
+			canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height)
+
+			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', canvas.toDataURL('image/jpeg'))
 		}
 
-		reader.readAsDataURL(files[0]);
+		img.src = URL.createObjectURL(files[0])
 	}
 }
