@@ -4,7 +4,7 @@
 		repeat="location in locations"
 		click="select(location)"
 		ng-class="{active:room == location}"
-		.btn-default .btn-block
+		.btn-default .btn-lg .btn-block
 	>
 		{{location}}
 	</button>
@@ -25,6 +25,7 @@
 			minlength="5"
 			maxlength="5"
 			required
+			.input-lg
 		>
 		<button
 			click="start()"
