@@ -39,7 +39,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 			canvas.width  = 800 //Default iPhone: 3264px
 			canvas.height = 600 //Default iPhone: 2448px
 
-			canvas.getContext('2d').drawImage(img, 0, 0, canvas.height, canvas.width)
+			canvas.getContext('2d').drawImage(img, 0, 0, 800, 1600)
 
 			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', canvas.toDataURL('image/jpeg'))
 		}
