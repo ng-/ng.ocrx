@@ -18,7 +18,7 @@ exports.server = function()
 						ng,
 					"</head>",
 					"<body>",
-						"<div class='pull-right' style='margin-right:15px'><span style='font-size:30px; font-weight:100'>OC<span class='text-danger'>R</span></span><span class='text-danger'>X</span></div>",
+						"<div class='pull-right' style='margin-right:15px'><span style='font-size:30px; font-weight:200'>OC<span class='text-danger'>R</span></span><span class='text-danger'>X</span></div>",
 						"<div class='ng-view'></div>",
 					"</body>",
 				"</html>"
