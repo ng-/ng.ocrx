@@ -36,10 +36,17 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 
 			var canvas = document.createElement('canvas')
 
-			canvas.width  = 800 //Default iPhone: 3264px
-			canvas.height = 600 //Default iPhone: 2448px
+			canvas.width  = 600 //Default w/rotation iPhone: 2448px
+			canvas.height = 800 //Default w/rotation iPhone: 3264px
+			// context.translate(canvas.width/2,canvas.height/2);
 
-			canvas.getContext('2d').drawImage(img, 0, 0, 800, 1200)
+			var context = canvas.getContext('2d')
+
+			context.translate(canvas.width, 0)
+
+			context.rotate(Math.PI / 2)
+
+			context.drawImage(img, 0, 0, canvas.height, canvas.width)
 
 			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', canvas.toDataURL('image/jpeg'))
 		}
