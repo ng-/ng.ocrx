@@ -12,18 +12,11 @@ module.exports = function($q, $http)
 	//Add Item  -> Upload Image to Donation Folder
 	//Signin -> Remember Username & Password
 
-	var readline  = require('readline').createInterface(process.stdin, process.stdout)
-	  , adminAuth = {"fg-domain":"ocrx"}
+	var adminAuth = {"fg-domain":"ocrx"}
 	  , url = 'https://secure.foldergrid.com/'
 
-	readline.question("Administrator Username: ", function(username)
-	{
-		readline.question("Administrator Password: ", function(password)
-		{
-			adminAuth['fg-username'] = username
-			adminAuth['fg-password'] = password
-		})
-	})
+	adminAuth['fg-username'] = process.argv[2] || console.log('Username not provided')
+	adminAuth['fg-password'] = process.argv[3] || console.log('Password not provided')
 
 	return {
 
