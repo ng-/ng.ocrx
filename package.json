@@ -2,6 +2,7 @@
    "name": "ng.ocrx",
    "description": "a modular ng application",
 	"version": "0.0.1-experimental1",
+	"main": "node_modules/ng.seed",
    "author": {
       "name": "ng.seed"
    },
@@ -11,11 +12,14 @@
 		"ng.data":"ng-/ng.data"
 	},
    "requires": {
-      "ng": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js",
+      "ng": 	  "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js",
       "ngRoute": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.min.js"
    },
-   "ports": {
-      "1337": "http"
-   },
-   "main": "node_modules/ng.seed"
+	"logs": {
+		"stderr":{"file":"node_modules/log.txt", "prefix":"Error -"},
+		"stdout":{"file":"node_modules/log.txt", "prefix":""}
+	},
+	"ports": {
+		"1337":"http"
+	}
 }

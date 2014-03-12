@@ -15,8 +15,20 @@ module.exports = function($q, $http)
 	var adminAuth = {"fg-domain":"ocrx"}
 	  , url = 'https://secure.foldergrid.com/'
 
-	adminAuth['fg-username'] = process.argv[2] || console.log('Username not provided')
-	adminAuth['fg-password'] = process.argv[3] || console.log('Password not provided')
+	var prompt = require('readline').createInterface(process.stdin, process.stdout)
+
+	prompt.question('Admin username ', function(username)
+	{
+		prompt.question('Admin password ', function(password)
+		{
+			adminAuth['fg-username'] = username
+			adminAuth['fg-password'] = password
+
+			console.log('\nThank you! Begin log with ctrl-c')
+
+			prompt.close()
+		})
+	})
 
 	return {
 
