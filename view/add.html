@@ -1,20 +1,27 @@
-<div controller="add" margin-top:0px>
+<div
+	controller="add"
+	margin-top:0px>
 	<input
 		type="button"
 		value="Finished"
 		click="done()"
 		disabled=" ! count"
-		.btn-danger .btn-lg .col-xs-5
+		.btn-danger
+		.btn-lg
+		.col-xs-5
 		position:absolute
-		left:10 top:10
-	>
-	<div position:absolute right:50% top:50% z-index:-1>
+		left:10
+		top:10>
+	<div
+		position:absolute
+		right:50%
+		top:50%
+		z-index:-1>
 		<div
 			ng-style="{'margin-right': count < 10 ? '-85px' : '-155px'}"
 			margin-top:-220px
 			font-size:300px
-			font-weight:100
-		>
+			font-weight:100>
 			{{count}}
 		</div>
 	</div>
@@ -22,8 +29,10 @@
 		type="camera"
 		value="Next Item"
 		onchange="nextItem(this.files)"
-		.btn-danger .btn-lg .col-xs-5
+		.btn-danger
+		.btn-lg
+		.col-xs-5
 		position:absolute
-		left:10 bottom:10
-	>
+		left:10
+		bottom:10>
 </div>

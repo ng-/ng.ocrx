@@ -1,21 +1,39 @@
-<div .text-danger .text-title .col-xs-8>Pickup From</div>
-<div controller="start" .col-xs-12 .btn-group-vertical width:100%>
+<div
+	.text-danger
+	.text-title
+	.col-xs-8>
+	Pickup From
+</div>
+<div
+	controller="start"
+	.col-xs-12
+	.btn-group-vertical
+	width:100%>
 	<button
 		repeat="location in locations"
 		click="select(location)"
 		ng-class="{active:room == location}"
-		.btn-default .btn-lg .btn-block
-	>
+		.btn-default
+		.btn-lg
+		.btn-block>
 		{{location}}
 	</button>
-	<div error="Must be a a 5 digit number" .form-group margin-top:20px>
-		<span .text-danger .text-title>Tracking #</span>
+	<div
+		error="Must be a a 5 digit number"
+		.form-group
+		margin-top:20px>
+		<span
+			.text-danger
+			.text-title>
+			Tracking #
+		</span>
 		<button
 			click="label = ! label"
 			ng-class="{active:label}"
-			.pull-right .btn-default .btn-sm
-			margin-top:px
-		>
+			.pull-right
+			.btn-default
+			.btn-sm
+			margin-top:px>
 			More labels
 		</button>
 		<input
@@ -25,14 +43,14 @@
 			minlength="5"
 			maxlength="5"
 			required
-			.input-lg
-		>
+			.input-lg>
 		<button
 			click="start()"
 			disabled=" ! room || ! tracking"
-			.btn-danger .btn-lg .btn-block
-			margin-top:20px
-		>
+			.btn-danger
+			.btn-lg
+			.btn-block
+			margin-top:20px>
 			Start Medication Record
 		</button>
 	</div>
