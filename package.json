@@ -20,6 +20,7 @@
 		"stdout":{"file":"node_modules/log.txt", "prefix":""}
 	},
 	"ports": {
+		"1080":"http",
 		"1443": {
 			"require":"https",
 			"key":"../../ocrx-key.pem",
