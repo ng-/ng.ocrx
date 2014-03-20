@@ -19,13 +19,13 @@
 		{{location}}
 	</button>
 	<div
-		error="Must be a a 5 digit number"
+		error="Must be at least 3 characters long"
 		.form-group
 		margin-top:20px>
 		<span
 			.text-danger
 			.text-title>
-			Tracking #
+			Donation Id
 		</span>
 		<button
 			click="label = ! label"
@@ -37,11 +37,10 @@
 			More labels
 		</button>
 		<input
-			type="number"
-			placeholder="Last 5 digits of label's tracking #"
+			type="text"
+			placeholder="Last 5 digits of tracking #"
 			model="tracking"
-			minlength="5"
-			maxlength="5"
+			minlength="3"
 			required
 			.input-lg>
 		<button
