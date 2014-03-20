@@ -24,7 +24,7 @@ module.exports = function($q, $http)
 			adminAuth['fg-username'] = username
 			adminAuth['fg-password'] = password
 
-			console.log('\nThank you! Begin log with ctrl-c')
+			console.log('\nThank you! Exit to daemon with ctrl-c')
 
 			prompt.close()
 		})

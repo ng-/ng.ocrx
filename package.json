@@ -1,7 +1,7 @@
 {
    "name": "ng.ocrx",
    "description": "a modular ng application",
-	"version": "0.0.1-experimental1",
+	"version": "0.0.0-rc1",
 	"main": "node_modules/ng.seed",
    "author": {
       "name": "ng.seed"
@@ -12,8 +12,14 @@
 		"ng.data":"ng-/ng.data"
 	},
    "requires": {
-      "ng": 	  "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js",
-      "ngRoute": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.min.js"
+		"local": {
+			"ng": 	  "../ng.cdn/1.2.6.js",
+			"ngRoute": "../ng.cdn/1.2.0-route.js"
+		},
+		"live": {
+			"ng": 	  "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js",
+			"ngRoute": "//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.min.js"
+		}
    },
 	"logs": {
 		"stderr":{"file":"node_modules/log.txt", "prefix":"Error -"},
@@ -22,7 +28,7 @@
 	"ports": {
 		"1080":"http",
 		"1443": {
-			"require":"https",
+			"use":"https",
 			"key":"../../ocrx-key.pem",
 			"cert":"../../ocrx-cert.pem"
 		}
