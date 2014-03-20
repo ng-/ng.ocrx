@@ -8,6 +8,8 @@ exports.server = function($q)
 		{
 			//var protocol = res ? req.connection.encrypted ? 'https' : 'http' : req.encrypted ? 'tls' : 'net'
 
+			console.log(config.url)
+			
 			if (config.connection.encrypted)
 			{
 				return config
