@@ -17,11 +17,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 		$location.path('start')
 	}
 
-	var rand = Math.random()
-
-	console.log(rand)
-
-	$scope.count = rand > .333 ? (rand < .666 ? Math.floor(Math.random()*900) + 100 : Math.floor(Math.random()*10)) : Math.floor(Math.random()*90) + 10//data('count')
+	$scope.count = data('count')
 
 	$scope.done = function()
 	{
