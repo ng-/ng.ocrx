@@ -36,8 +36,8 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 
 			var canvas = document.createElement('canvas')
 
-			canvas.width  = 600
-			canvas.height = 800
+			canvas.width  = 900
+			canvas.height = 1200
 			// context.translate(canvas.width/2,canvas.height/2);
 
 			var context = canvas.getContext('2d')
