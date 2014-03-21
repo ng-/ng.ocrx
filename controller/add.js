@@ -17,7 +17,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 		$location.path('start')
 	}
 
-	$scope.count = data('count')
+	$scope.count = data('count') || 237
 
 	$scope.done = function()
 	{
