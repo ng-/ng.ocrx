@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = function($scope, $http, $window, $location, fg, data)
+module.exports = function($scope, $http, $window, $location, $q, fg, data)
 {
 	var user  = data('user')
 
@@ -28,13 +28,13 @@ module.exports = function($scope, $http, $window, $location, fg, data)
 		var folder =
 		{
 			date : (new Date).toJSON().slice(0, 16),
-			send : $scope.label ? 'Send me more labels' : '',
+			send : $scope.label ? '. Send me more labels' : '',
 			track: $scope.tracking,
 			room : $scope.room
 		}
 
-		folder.uuid = folder.date+'-'+folder.track,
-		folder.name = folder.date+' '+user.group+' #'+folder.track+' @'+folder.room+'. '+folder.send
+		folder.uuid = folder.date+'-'+user.email,
+		folder.name = folder.date+' '+user.group+' #'+folder.track+' @'+folder.room+folder.send
 
 		fg.saveFolder(folder.uuid, folder.name)
 

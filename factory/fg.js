@@ -94,16 +94,37 @@ module.exports = function($q, $http)
 
 		saveFolder: function(uuid, name)
 		{
-			return $http.put
+			var parentDuid =  "10f2236f-46e3-48a1-b3ae-ff10866eeb47" //Pending Folder
+
+			var q         = $q.defer()
+			  , saveFile  = this.saveFile
+
+			//Foldergrid's watch email is not triggered on a subfolder creation
+			//or on a file "copied" into the folder.  So we either implement our
+			//own emails or we create a new csv file to trigger watch to send email
+			//also watch cannot be set for other users, so we can't just set the
+			//ocrVendor to watch this new folder without their credentials
+			require('fs').readFile('assets/output.csv', function(err, file)
+			{
+				if (err) q.reject(err)
+
+				file = 'data:text/csv;base64,'+file.toString('base64')
+
+				q.resolve(saveFile(parentDuid, name+'.csv', file))
+			})
+
+			var saveFolder = $http.put
 			(
 				url+'folder/'+uuid,
 				{
 					name: name,
-					parentDuid: "10f2236f-46e3-48a1-b3ae-ff10866eeb47", //Pending Folder
+					parentDuid: parentDuid,
 					subfoldersInherit: true
 				},
 				{headers:adminAuth}
 			)
+
+			return $q.all([q.promise, saveFolder])
 		},
 
 		saveUser: function(user)

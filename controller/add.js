@@ -36,21 +36,19 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 
 			var canvas = document.createElement('canvas')
 
-			canvas.width  = 1200
-			canvas.height = 1600
-			// context.translate(canvas.width/2,canvas.height/2);
+			canvas.width  = img.width  * 1
+			canvas.height = img.height * 1
 
 			var context = canvas.getContext('2d')
 
-			context.translate(canvas.width, 0)
-
-			context.rotate(Math.PI / 2)
-
 			//Default iPhone: 3264px x 2448px w/ vertical squash of .5 as calculated by
 			//http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
-			context.drawImage(img, 0/2, 0/2, 3264/2, 2448/2, 0, 0, canvas.height, canvas.width)
+			context.drawImage(img, 0/2, 0/2, img.width/2, img.height/2, 0, 0, canvas.width, canvas.height)
 
-			fg.saveFile(folder.uuid, 'item'+$scope.count+'.jpg', canvas.toDataURL('image/jpeg'))
+			//Pad the digits to help with alphabetical ordering in foldergrid
+			var pad = $scope.count < 10 ? '00' : $scope.count < 100 ? '0' : ''
+
+			fg.saveFile(folder.uuid, 'image'+pad+$scope.count+'.jpg', canvas.toDataURL('image/jpeg', .5))
 		}
 
 		img.src = URL.createObjectURL(files[0])
