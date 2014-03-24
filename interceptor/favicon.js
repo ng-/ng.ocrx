@@ -15,7 +15,7 @@ exports.server = function($q)
 
 			var q = $q.defer()
 
-			readFile('image'+config.url, function(err, file)
+			readFile('assets'+config.url, function(err, file)
 			{
 				q.reject({status: err ? 404 : 200, data:file})
 			})
