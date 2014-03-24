@@ -56,7 +56,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 			//Pad the digits to help with alphabetical ordering in foldergrid
 			var pad = $scope.count < 10 ? '00' : $scope.count < 100 ? '0' : ''
 
-			fg.saveFile(folder.uuid, 'image'+pad+$scope.count+'.jpg', canvas.toDataURL('image/jpeg', .92))
+			fg.saveFile(folder.uuid, 'image'+pad+$scope.count+'.jpg', canvas.toDataURL('image/jpeg', .85))
 		}
 
 		img.src = URL.createObjectURL(files[0])
