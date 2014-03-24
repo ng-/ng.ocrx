@@ -9,7 +9,7 @@ module.exports = function($scope, $window, $document, $location, fg, data)
 	  //Default iPhone: 3264px x 2448px w/ vertical squash of .5 as calculated by
 	  //http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
 	  , squish  = 'iPhone' == navigator.platform ? 2 : 1
-	  , scale   = .5
+	  , scale   = .75
 	  , img     = new Image
 
 	if ( ! user)
